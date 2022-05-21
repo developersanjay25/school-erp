@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Admin from './Admin';
+import Parent from './Parent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <Routes>
+      <Route path={'/'} exact element={<App />} />
+      <Route path={'/admin'} exact element={<Admin />} />
+      <Route path={'/parent'} element={<Parent />} />
+    </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
